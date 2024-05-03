@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "GALAGA_PD_USFX_LABO1",
+			"Path": "D:\\UNREAL_ENGINGE_4.27\\GALAGA_PD_USFX_LABO1\\Source\\GALAGA_PD_USFX_LABO1.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "GALAGA_PD_USFX_LABO1Editor",
+			"Path": "D:\\UNREAL_ENGINGE_4.27\\GALAGA_PD_USFX_LABO1\\Source\\GALAGA_PD_USFX_LABO1Editor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
