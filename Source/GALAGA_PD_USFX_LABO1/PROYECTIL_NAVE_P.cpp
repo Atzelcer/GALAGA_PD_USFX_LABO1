@@ -35,13 +35,15 @@ APROYECTIL_NAVE_P::APROYECTIL_NAVE_P()
 	}
 
 
-	// Crear y configurar el componente de movimiento del proyectil
-	ProjectileMovement = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileMovement"));
-	ProjectileMovement->UpdatedComponent = RootComponent;
-	ProjectileMovement->InitialSpeed = 3000.f;
-	ProjectileMovement->MaxSpeed = 3000.f;
-	ProjectileMovement->bRotationFollowsVelocity = true;
-	ProjectileMovement->bShouldBounce = false;
+	// Crear e inicializar el componente de movimiento del proyectil
+	Projectil_Movement = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileMovement"));
+	Projectil_Movement->UpdatedComponent = RootComponent;
+	Projectil_Movement->InitialSpeed = 750.0f;
+	Projectil_Movement->MaxSpeed = 850.0f;
+	Projectil_Movement->bRotationFollowsVelocity = true;
+	Projectil_Movement->bShouldBounce = false;
+	Projectil_Movement->ProjectileGravityScale = 0.0f; // Sin gravedad
+
 
 	//Configurando el proyectil para que genere eventos de colision
 	Projectil_Collision->SetCapsuleHalfHeight(160.0f);
@@ -55,8 +57,8 @@ void APROYECTIL_NAVE_P::NotifyActorBeginOverlap(AActor* OtherActor)
 	AGALAGA_PD_USFX_LABO1Pawn* Nave_Principal = Cast<AGALAGA_PD_USFX_LABO1Pawn>(OtherActor);
 	if (Nave_Principal)
 	{
-		//Nave_Principal->Damage();
-		//DestroyPROYECTIL();
+		Nave_Principal->Damage(30);
+		Efectos_De_Colision();
 	}
 }
 

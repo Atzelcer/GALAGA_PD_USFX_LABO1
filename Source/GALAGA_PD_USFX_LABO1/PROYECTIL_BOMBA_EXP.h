@@ -20,6 +20,10 @@ public:
 
 	virtual void Efectos_De_Colision() override;
 
+private:
 
+	float TimeSinceSpawned;  // Tiempo acumulado desde que la bomba fue creada
+	float ExplosionDelay;    // Tiempo en segundos para la explosión
+	bool Conpuerta;
 
 };

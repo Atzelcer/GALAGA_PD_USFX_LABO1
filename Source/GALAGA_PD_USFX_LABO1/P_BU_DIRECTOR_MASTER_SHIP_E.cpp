@@ -14,48 +14,56 @@ AP_BU_DIRECTOR_MASTER_SHIP_E::AP_BU_DIRECTOR_MASTER_SHIP_E()
 // Called when the game starts or when spawned
 void AP_BU_DIRECTOR_MASTER_SHIP_E::BeginPlay()
 {
-	//Super::BeginPlay();
+	Super::BeginPlay();
 	
 }
 
 // Called every frame
 void AP_BU_DIRECTOR_MASTER_SHIP_E::Tick(float DeltaTime)
 {
-	/*Super::Tick(DeltaTime);*/
+	Super::Tick(DeltaTime);
 
 }
 
-void AP_BU_DIRECTOR_MASTER_SHIP_E::ConstruirNaveMaestra(FVector Ubicacion_Nave)
-{
-	if (!Constructor)
-	{
-		UE_LOG(LogTemp, Error, TEXT("Constructor no definido. No se puede construir la nave maestra."));
-		return;
-	}
 
-	Constructor->Ubicacion_Nave_Maestra(Ubicacion_Nave);
-	Constructor->ConstruirEscudo(NewObject<AEscudo_Nave_M>(this));
-	Constructor->ConstruirProyectil(NewObject<APROYECTIL_P>(this));
-	Constructor->ConstruirFabricaNaves(NewObject<AP_FM_FABRICA_NAVES>(this));
-	Constructor->CaracteristicasNaveMaestra();
-}
-
-void AP_BU_DIRECTOR_MASTER_SHIP_E::SetDirectorNaveMaestra(AActor* Builder)
+void AP_BU_DIRECTOR_MASTER_SHIP_E::Set_Constructor_Nave_Maestra(AActor* Builder)
 {
-	Constructor = Cast<ABIU_SHIP_MASTER_OFENSIVA>(Builder);
-	if (!Constructor)
+
+	Constructor_Nave = Cast<IP_BU_INT01_SHIP_MASTER_E>(Builder);
+
+	if (!Constructor_Nave)
 	{
+		GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Red, FString::Printf(TEXT("Lanzamiento no valido! ERROR INESPERADO ")));
 		UE_LOG(LogTemp, Error, TEXT("El constructor asignado no es válido o no implementa IBUI_INT_NAVE_MAESTRA"));
 	}
 }
 
-//AP_BU_MASTER_SHIP_CONS_02* AP_BU_DIRECTOR_MASTER_SHIP_E::Get_Nave_Maestra()
-//{
-//	if (P_BU_INT01_SHIP_MASTER_E)
-//	{
-//		return P_BU_INT01_SHIP_MASTER_E->Get_Master_Maestra();
-//	}
-//	UE_LOG(LogTemp, Error, TEXT("Get_Nave_Maestra(): Return nullptr"));
-//	return nullptr;
-//}
 
+
+void AP_BU_DIRECTOR_MASTER_SHIP_E::ConstruirNaveMaestra()
+{
+
+	if (!Constructor_Nave)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Red, FString::Printf(TEXT("Lanzamiento no valido! ERROR INESPERADO ")));
+		UE_LOG(LogTemp, Error, TEXT("El constructor asignado no es válido o no implementa IBUI_INT_NAVE_MAESTRA"));
+		return;
+	}
+	Constructor_Nave->Construir_Proyectil_Lazer();
+	Constructor_Nave->Construir_Proyectil_Misil();
+	Constructor_Nave->Construir_Proyectil_Esfera_Energia();
+	Constructor_Nave->Construir_Proyectil_Bomba();
+}
+
+
+AP_BU_MASTER_SHIP_CONS_02* AP_BU_DIRECTOR_MASTER_SHIP_E::Obtener_Nave_Maestra()
+{
+	if (Constructor_Nave)
+	{
+		return Constructor_Nave->Get_Master_Maestra();
+	
+	}
+	//Registrar si el Constructor es NULL
+	UE_LOG(LogTemp, Error, TEXT("Obtener_Nave_Maestra(): Devuelve nullptr"));
+	return nullptr;
+}

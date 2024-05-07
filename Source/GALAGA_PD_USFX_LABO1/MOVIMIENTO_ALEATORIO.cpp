@@ -2,6 +2,7 @@
 
 
 #include "MOVIMIENTO_ALEATORIO.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values for this component's properties
 UMOVIMIENTO_ALEATORIO::UMOVIMIENTO_ALEATORIO()
@@ -18,7 +19,7 @@ UMOVIMIENTO_ALEATORIO::UMOVIMIENTO_ALEATORIO()
 void UMOVIMIENTO_ALEATORIO::BeginPlay()
 {
 	Super::BeginPlay();
-
+	NewPosition = GetOwner()->GetActorLocation(); // Inicializa la posición
 	// ...
 	
 }
@@ -28,7 +29,29 @@ void UMOVIMIENTO_ALEATORIO::BeginPlay()
 void UMOVIMIENTO_ALEATORIO::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+	ExecuteMovement(DeltaTime);
 
 	// ...
 }
+
+void UMOVIMIENTO_ALEATORIO::ExecuteMovement(float DeltaTime)
+{
+	TimeSinceLastMove += DeltaTime;
+
+//if (TimeSinceLastMove >= MoveInterval) {
+//    // Genera nuevas posiciones dentro de los rangos dados
+//    float NewX = FMath::RandRange(-240.0f, 1720.0f);
+//    float NewY = FMath::RandRange(-1730.0f, 1730.0f);
+//    NewPosition.X = NewX;
+//    NewPosition.Y = NewY;
+//
+//    // Asignar la nueva posición manteniendo la misma altura (Z)
+//    FVector CurrentPosition = GetOwner()->GetActorLocation();
+//    NewPosition.Z = CurrentPosition.Z;
+//    GetOwner()->SetActorLocation(NewPosition);
+//
+//    TimeSinceLastMove = 0.0f; // Restablecer el contador de tiempo
+//}
+}
+
 

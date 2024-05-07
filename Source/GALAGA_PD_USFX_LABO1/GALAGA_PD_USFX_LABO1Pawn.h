@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+
 #include "GALAGA_PD_USFX_LABO1Pawn.generated.h"
 
 UCLASS(Blueprintable)
@@ -22,6 +23,8 @@ class AGALAGA_PD_USFX_LABO1Pawn : public APawn
 	/** Camera boom positioning the camera above the character */
 	UPROPERTY(Category = Camera, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	class USpringArmComponent* CameraBoom;
+
+	
 
 public:
 	AGALAGA_PD_USFX_LABO1Pawn();
@@ -42,6 +45,28 @@ public:
 	UPROPERTY(Category = Audio, EditAnywhere, BlueprintReadWrite)
 	class USoundBase* FireSound;
 
+
+	UPROPERTY(EditAnywhere, Category = "Colision")
+	class UCapsuleComponent* ShipCollision; // para colisiones
+
+	UPROPERTY(EditAnywhere, Category = "Particula de Explosion")
+	class UParticleSystem* ShipExplosion; // para la explosión
+
+	UPROPERTY(EditAnywhere, Category = "Audio_Explosion")
+	class USoundBase* ExplosionSoundShip;    // sonido de explosión
+
+	// metodo para los daños de la nave
+	void Damage(float _Damage);
+
+	// metodo para la explocion
+	void DestroyAndExplosion();
+
+	float Health;  // vida de la nave 
+
+	float HealthMax ; // vida maxima de la nave
+
+
+	virtual void NotifyActorBeginOverlap(AActor* OtherActor) override;
 
 	// Begin Actor Interface
 	virtual void Tick(float DeltaSeconds) override;

@@ -36,7 +36,7 @@ public: \
 
 #define GALAGA_PD_USFX_LABO1_Source_GALAGA_PD_USFX_LABO1_AMyHUD_h_15_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API AAMyHUD(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	NO_API AAMyHUD(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AAMyHUD) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, AAMyHUD); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AAMyHUD); \
@@ -48,8 +48,6 @@ public:
 
 
 #define GALAGA_PD_USFX_LABO1_Source_GALAGA_PD_USFX_LABO1_AMyHUD_h_15_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API AAMyHUD(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AAMyHUD(AAMyHUD&&); \
@@ -57,10 +55,14 @@ private: \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, AAMyHUD); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AAMyHUD); \
-	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AAMyHUD)
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AAMyHUD)
 
 
-#define GALAGA_PD_USFX_LABO1_Source_GALAGA_PD_USFX_LABO1_AMyHUD_h_15_PRIVATE_PROPERTY_OFFSET
+#define GALAGA_PD_USFX_LABO1_Source_GALAGA_PD_USFX_LABO1_AMyHUD_h_15_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__WidgetClass() { return STRUCT_OFFSET(AAMyHUD, WidgetClass); } \
+	FORCEINLINE static uint32 __PPO__LifeWidget() { return STRUCT_OFFSET(AAMyHUD, LifeWidget); }
+
+
 #define GALAGA_PD_USFX_LABO1_Source_GALAGA_PD_USFX_LABO1_AMyHUD_h_12_PROLOG
 #define GALAGA_PD_USFX_LABO1_Source_GALAGA_PD_USFX_LABO1_AMyHUD_h_15_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \

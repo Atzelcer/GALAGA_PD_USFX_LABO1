@@ -15,9 +15,9 @@ APROYECTIL_LAZER::APROYECTIL_LAZER()
 	{
 		Projectil_Mesh->SetStaticMesh(MeshAsset.Object);
 
-		//// Modificar la escala del componente de malla
-		//FVector NewScale(3.0f, 10.0f, 0.0f); // Escala modificada
-		//Projectil_Mesh->SetWorldScale3D(NewScale);
+		// Modificar la escala del componente de malla
+		FVector NewScale(3.0f, 10.0f, 0.0f); // Escala modificada
+		Projectil_Mesh->SetWorldScale3D(NewScale);
 	}
 
 	// Inicializar el sistema de partículas para la explosión
@@ -33,6 +33,13 @@ APROYECTIL_LAZER::APROYECTIL_LAZER()
 	{
 		Projectil_Sound = SoundAsset.Object;
 	}
+
+	//Determinando la velocidad del proyectil
+	Projectil_Movement->InitialSpeed = 750.0f;
+	Projectil_Movement->MaxSpeed = 850.0f;
+
+	//Tiempo de vida del proyectil
+	InitialLifeSpan = 6.0f;
 
 	//Configurando el proyectil para que genere eventos de colision
 	Projectil_Collision->SetCapsuleHalfHeight(160.0f);

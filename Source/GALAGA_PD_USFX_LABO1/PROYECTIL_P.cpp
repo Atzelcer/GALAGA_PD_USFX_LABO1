@@ -4,6 +4,7 @@
 #include "PROYECTIL_P.h"
 #include "UObject/ConstructorHelpers.h"
 #include "Components/CapsuleComponent.h"
+#include "P_BU_MASTER_SHIP_CONS_02.h"
 
 // Sets default values
 APROYECTIL_P::APROYECTIL_P()
@@ -46,6 +47,10 @@ void APROYECTIL_P::Tick(float DeltaTime)
 
 void APROYECTIL_P::NotifyActorBeginOverlap(AActor* OtherActor)
 {
+	if (OtherActor->IsA(AP_BU_MASTER_SHIP_CONS_02::StaticClass())) {
+		//Efectos_De_Colision();
+		Destroy();
+	}
 }
 
 void APROYECTIL_P::Efectos_De_Colision()

@@ -7,6 +7,7 @@
 #include "Particles/ParticleSystem.h"
 #include "Kismet/GameplayStatics.h"
 #include "GALAGA_PD_USFX_LABO1Pawn.h"
+#include "P_BU_MASTER_SHIP_CONS_02.h"
 
 APROYECTIL_ESFERA_ENERGIA::APROYECTIL_ESFERA_ENERGIA()
 {
@@ -15,9 +16,9 @@ APROYECTIL_ESFERA_ENERGIA::APROYECTIL_ESFERA_ENERGIA()
 	{
 		Projectil_Mesh->SetStaticMesh(MeshAsset.Object);
 
-		//// Modificar la escala del componente de malla
-		//FVector NewScale(3.0f, 10.0f, 0.0f); // Escala modificada
-		//Projectil_Mesh->SetWorldScale3D(NewScale);
+		// Modificar la escala del componente de malla
+		FVector NewScale(3.0f, 3.0f, 3.0f); // Escala modificada
+		Projectil_Mesh->SetWorldScale3D(NewScale);
 	}
 
 	// Inicializar el sistema de partículas para la explosión
@@ -43,8 +44,8 @@ APROYECTIL_ESFERA_ENERGIA::APROYECTIL_ESFERA_ENERGIA()
 	InitialLifeSpan = 6.0f;
 
 	//Configurando el proyectil para que genere eventos de colision
-	Projectil_Collision->SetCapsuleHalfHeight(160.0f);
-	Projectil_Collision->SetCapsuleRadius(160.0f);
+	Projectil_Collision->SetCapsuleHalfHeight(10.0f);
+	Projectil_Collision->SetCapsuleRadius(10.0f);
 }
 
 void APROYECTIL_ESFERA_ENERGIA::NotifyActorBeginOverlap(AActor* OtherActor)
@@ -56,6 +57,13 @@ void APROYECTIL_ESFERA_ENERGIA::NotifyActorBeginOverlap(AActor* OtherActor)
 	{
 		//Nave_Principal->Damage();
 		//DestroyPROYECTIL();
+	}
+
+	AP_BU_MASTER_SHIP_CONS_02* Nave_Maestra = Cast<AP_BU_MASTER_SHIP_CONS_02>(OtherActor);
+	if (Nave_Maestra)
+	{
+		Nave_Maestra->Damage(60);
+		Efectos_De_Colision();
 	}
 }
 

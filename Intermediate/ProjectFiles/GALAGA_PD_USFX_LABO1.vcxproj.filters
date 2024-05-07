@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\GALAGA_PD_USFX_LABO1.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{04C48257-5480-4188-8B0D-909FBEF79B30}</UniqueIdentifier>
+      <UniqueIdentifier>{9AD84B94-DA4D-44D4-9F85-9B059C2282C9}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\GALAGA_PD_USFX_LABO1.Target.cs">
       <Filter>Source</Filter>
@@ -11,8 +11,10 @@
     <None Include="..\..\Source\GALAGA_PD_USFX_LABO1Editor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{0E390E6B-640F-4233-B136-A36A1967F161}</UniqueIdentifier>
+      <UniqueIdentifier>{2BF66338-DBB1-4A39-84B0-86BC237AFFB1}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,12 +32,30 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\GALAGA_PD_USFX_LABO1">
-      <UniqueIdentifier>{596F2380-0F8F-48F5-B2EF-06A89A7E2206}</UniqueIdentifier>
+      <UniqueIdentifier>{E3405563-875A-4B26-AEDC-CE609D633153}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\AAAS_P_BUI_SISTEMA_DEFENSA_FURIA.cpp">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\AAAS_P_BUI_SISTEMA_DEFENSA_FURIA.h">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\AAS_P_BUI_SISTEMA_DEFENSA_PASIVA.cpp">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\AAS_P_BUI_SISTEMA_DEFENSA_PASIVA.h">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\AMyHUD.cpp">
       <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\AMyHUD.h">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\AS_P_BUI_SISTEMA_DEFENSA_CONST.cpp">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\AS_P_BUI_SISTEMA_DEFENSA_CONST.h">
       <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\BIU_SHIP_MASTER_OFENSIVA.cpp">
@@ -48,6 +68,36 @@
       <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\BUI_INT_NAVE_MAESTRA.h">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\CANONES_ESPACIALES.cpp">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\CANONES_ESPACIALES.h">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\CANONES_ESPACIALES_01.cpp">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\CANONES_ESPACIALES_01.h">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\CANONES_ESPACIALES_02.cpp">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\CANONES_ESPACIALES_02.h">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\CANONES_ESPACIALES_03.cpp">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\CANONES_ESPACIALES_03.h">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\Escudo_CE_Active.cpp">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\Escudo_CE_Active.h">
       <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\Escudo_Nave_M.cpp">
@@ -83,10 +133,94 @@
     <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\GALAGA_PD_USFX_LABO1Projectile.h">
       <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\LANZA_COHETES_ESPACIAL.cpp">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\LANZA_COHETES_ESPACIAL.h">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\LIfes_Naves.cpp">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\LIfes_Naves.h">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\MINAS_ESPACIALES.cpp">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\MINAS_ESPACIALES.h">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\MovementStrategy.cpp">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\MovementStrategy.h">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\Moviento_Nave_Maestra.cpp">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\Moviento_Nave_Maestra.h">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\MOVIMIENTO_ALEATORIO.cpp">
       <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\MOVIMIENTO_ALEATORIO.h">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\Movimiento_Giratorio_Nave_Master.cpp">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\Movimiento_Giratorio_Nave_Master.h">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\MOVIMIENTO_NULO_NAVE_m.cpp">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\MOVIMIENTO_NULO_NAVE_m.h">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\Movimiento_Violento_Nave_Maestra.cpp">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\Movimiento_Violento_Nave_Maestra.h">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\MyLANZA_COHETES_ESPACIAL_01.cpp">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\MyLANZA_COHETES_ESPACIAL_01.h">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\MyLANZA_COHETES_ESPACIAL_02.cpp">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\MyLANZA_COHETES_ESPACIAL_02.h">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\MyLANZA_COHETES_ESPACIAL_03.cpp">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\MyLANZA_COHETES_ESPACIAL_03.h">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\MyMINAS_ESPACIALES_01.cpp">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\MyMINAS_ESPACIALES_01.h">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\MyMINAS_ESPACIALES_02.cpp">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\MyMINAS_ESPACIALES_02.h">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\MyMINAS_ESPACIALES_03.cpp">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\MyMINAS_ESPACIALES_03.h">
       <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\PROYECTIL_BOMBA_EXP.cpp">
@@ -197,6 +331,12 @@
     <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\P_FM_FABRICA_NAVES.h">
       <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\Score.cpp">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\Score.h">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\SHIP_LEVEL_01.cpp">
       <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
     </ClCompile>
@@ -231,6 +371,60 @@
       <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\SSLiteBarWidget.h">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\S_P_BUI_Director_Sistema_Defensa.cpp">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\S_P_BUI_Director_Sistema_Defensa.h">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\S_P_BUI_SISTEMA_DEFENSA_ACT.cpp">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\S_P_BUI_SISTEMA_DEFENSA_ACT.h">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\S_P_INT_02_SISTEMA_DEFENSA.cpp">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\S_P_INT_02_SISTEMA_DEFENSA.h">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\S_P_INT_SISTEMA_DEFENSA.cpp">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\S_P_INT_SISTEMA_DEFENSA.h">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\Torreta_Espacial.cpp">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\Torreta_Espacial.h">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\Torreta_Espacial_01.cpp">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\Torreta_Espacial_01.h">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\Torreta_Espacial_02.cpp">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\Torreta_Espacial_02.h">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\Torreta_Espacial_03.cpp">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\Torreta_Espacial_03.h">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GALAGA_PD_USFX_LABO1\UBUI_CONSTRUCTOR_NAVE_OFENSIVA.cpp">
+      <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GALAGA_PD_USFX_LABO1\UBUI_CONSTRUCTOR_NAVE_OFENSIVA.h">
       <Filter>Source\GALAGA_PD_USFX_LABO1</Filter>
     </ClInclude>
   </ItemGroup>

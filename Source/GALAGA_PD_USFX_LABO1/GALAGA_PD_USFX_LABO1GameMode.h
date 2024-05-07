@@ -17,10 +17,31 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 private:
+
+
 	virtual void BeginPlay() override;
 
-	class AP_BU_DIRECTOR_MASTER_SHIP_E* DiretorNaveMaestra; // Variable para el Director de Nave Maestra
-	class ABIU_SHIP_MASTER_OFENSIVA* NaveMaestra_Game; //// Variable para la Nave Maestra 
+
+	UPROPERTY(VisibleAnywhere, Category = "GameModeBase")
+	class AS_P_BUI_SISTEMA_DEFENSA_ACT* Sistema_DefensaAA01; // Variable para el Sistema de Defensa
+
+
+	UPROPERTY(VisibleAnywhere, Category = "GameModeBase")
+	class AAAAS_P_BUI_SISTEMA_DEFENSA_FURIA* Sistema_DefensaAA02; // Variable para el Sistema de Defensa Furia
+
+	UPROPERTY(VisibleAnywhere, Category = "GameModeBase")
+	class AAAS_P_BUI_SISTEMA_DEFENSA_PASIVA* Sistema_DefensaAA03; // Variable para el Sistema de Defensa Pasiva
+
+
+	UPROPERTY(VisibleAnywhere, Category = "GameModeBase")
+	class AS_P_BUI_Director_Sistema_Defensa* DirectorSistemaDefensa; // Variable para el Director del Sistema de Defensa
+
+
+	UPROPERTY(VisibleAnywhere, Category = "GameModeBase")
+	class AP_BU_DIRECTOR_MASTER_SHIP_E* DirectorNaveMaestra; // Variable para el Director de Nave Maestra
+
+	UPROPERTY(VisibleAnywhere, Category = "GameModeBase")
+	class AP_BU_MASTER_SHIP_CONS* Nave_Maestra_Game; //// Variable para la Nave Maestra 
 
 	// Variables para la creacion de Naves
 	float Iniciar_Nave_Generar;
@@ -30,6 +51,17 @@ private:
 	float DistanciaEntreNaves;
 	int32 Nivel;
 	float TiempoNivel;
+private:
+	bool bHasSpawnedSistemaDefensaAA01 = false;
+	bool bHasSpawnedSistemaDefensaAA02 = false;
+	bool bHasSpawnedSistemaDefensaAA03 = false;
+
+	float TimerSistemaDefensaAA01 = 10.0f;  // 10 segundos para spawnear el primer sistema
+	float TimerSistemaDefensaAA02 = 30.0f;  // 20 segundos para spawnear el segundo sistema
+	float TimerSistemaDefensaAA03 = 20.0f;  // 30 segundos para spawnear el tercer sistema
+
+	float CurrentTime = 0.0f;  // Contador de tiempo actual
+
 };
 
 

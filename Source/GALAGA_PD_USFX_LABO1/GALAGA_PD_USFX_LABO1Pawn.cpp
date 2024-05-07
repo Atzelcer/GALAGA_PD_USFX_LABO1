@@ -12,6 +12,12 @@
 #include "Engine/StaticMesh.h"
 #include "Kismet/GameplayStatics.h"
 #include "Sound/SoundBase.h"
+#include "Components/CapsuleComponent.h"
+#include "PROYECTIL_P.h"
+
+#include "Particles/ParticleSystem.h"
+#include "UObject/ConstructorHelpers.h"
+#include "Movimiento_Giratorio_Nave_Master.h"
 
 const FName AGALAGA_PD_USFX_LABO1Pawn::MoveForwardBinding("MoveForward");
 const FName AGALAGA_PD_USFX_LABO1Pawn::MoveRightBinding("MoveRight");
@@ -44,7 +50,23 @@ AGALAGA_PD_USFX_LABO1Pawn::AGALAGA_PD_USFX_LABO1Pawn()
 	CameraComponent->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
 	CameraComponent->bUsePawnControlRotation = false;	// Camera does not rotate relative to arm
 
+	// campo de colision
+	//ShipCollision = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Collision Player"));
+	//ShipCollision->SetCapsuleHalfHeight(15.0f);
+	//ShipCollision->SetCapsuleRadius(35.0f);
 
+	// creamos el efecto de explosion
+	static ConstructorHelpers::FObjectFinder<UParticleSystem> AssetExplosion(TEXT("ParticleSystem'/Game/StarterContent/Particles/P_Explosion.P_Explosion'"));
+	if (AssetExplosion.Succeeded())
+	{
+		ShipExplosion = AssetExplosion.Object;
+	}
+	// creando sonido de explosion
+	static ConstructorHelpers::FObjectFinder<USoundBase> ExplosionAudioAA(TEXT("SoundWave'/Game/StarterContent/Audio/Explosion01.Explosion01'"));
+	if (ExplosionAudioAA.Succeeded())
+	{
+		ExplosionSoundShip = ExplosionAudioAA.Object;
+	}
 
 	// Movement
 	MoveSpeed = 1000.0f;
@@ -52,6 +74,9 @@ AGALAGA_PD_USFX_LABO1Pawn::AGALAGA_PD_USFX_LABO1Pawn()
 	GunOffset = FVector(90.f, 0.f, 0.f);
 	FireRate = 0.1f;
 	bCanFire = true;
+
+	HealthMax = 1000;
+	Health = 1000;
 }
 
 void AGALAGA_PD_USFX_LABO1Pawn::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
@@ -65,8 +90,52 @@ void AGALAGA_PD_USFX_LABO1Pawn::SetupPlayerInputComponent(class UInputComponent*
 	PlayerInputComponent->BindAxis(FireRightBinding);
 }
 
+void AGALAGA_PD_USFX_LABO1Pawn::Damage(float _Damage)
+{
+	Health -= _Damage;
+}
+
+void AGALAGA_PD_USFX_LABO1Pawn::DestroyAndExplosion()
+{
+	//Efecto de Explosion 
+	if (ShipExplosion)
+		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), ShipExplosion, GetActorTransform());
+	//Sonido de la explosion
+
+	if (ExplosionSoundShip != nullptr)
+		UGameplayStatics::PlaySoundAtLocation(this, ExplosionSoundShip, GetActorLocation());
+
+	//Para que se destruya la nave principal
+	//this->Destroy();
+
+}
+
+void AGALAGA_PD_USFX_LABO1Pawn::NotifyActorBeginOverlap(AActor* OtherActor)
+{
+	//AGALAGA_PD_USFX_LABO1Projectile* Proyectil = Cast<AGALAGA_PD_USFX_LABO1Projectile>(OtherActor);
+	//if (Proyectil)
+	//{
+	//	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Colision con el Projectile"));
+	//	//Proyectil->Destroy();
+	//	Damage(45.f);
+	//}
+
+}
+
 void AGALAGA_PD_USFX_LABO1Pawn::Tick(float DeltaSeconds)
 {
+	// Mostrar la salud actual en la pantalla usando un mensaje de depuración:
+	if (GEngine)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 0.f, FColor::Yellow, FString::Printf(TEXT("Health: %f"), Health));
+	}
+
+	//if (Health <= 0) 
+	//{
+	//	DestroyAndExplosion();
+
+	//}
+
 	// Find movement direction
 	const float ForwardValue = GetInputAxisValue(MoveForwardBinding);
 	const float RightValue = GetInputAxisValue(MoveRightBinding);

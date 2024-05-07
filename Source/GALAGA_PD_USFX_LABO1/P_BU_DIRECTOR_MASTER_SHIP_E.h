@@ -8,7 +8,6 @@
 #include "P_BU_MASTER_SHIP_CONS_02.h"
 #include "BUI_INT_NAVE_MAESTRA.h"
 #include "BIU_SHIP_MASTER_OFENSIVA.h"
-
 #include "P_BU_DIRECTOR_MASTER_SHIP_E.generated.h"
 
 /**
@@ -27,6 +26,7 @@ public:
 	// Sets default values for this actor's properties
 	AP_BU_DIRECTOR_MASTER_SHIP_E();
 
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -37,17 +37,16 @@ public:
 
 public:
 
-	void ConstruirNaveMaestra(FVector Ubicacion_Nave);
-	void SetDirectorNaveMaestra(AActor* Builder);
+	void ConstruirNaveMaestra();
+	void Set_Constructor_Nave_Maestra(AActor* Builder);
 
 
-	ABIU_SHIP_MASTER_OFENSIVA* Constructor;
+	class AP_BU_MASTER_SHIP_CONS_02* Obtener_Nave_Maestra();
 
-	// EstablecerConstructor(Actor * _Constructor);
-	//ConstruirNaveMaestra(FVector Ubicacion_Nave);
-	// ConstruirNave* Get_Nave_Maestra();;
+	//class BIU_SHIP_MASTER_OFENSIVA* Obtener_Nave_Ofensiva();
 
+private: 
 
-	//el static es un emtodo ouro de unreal engine  que permite acceder a un metodo sin necesidad de instanciar la clase
-	//verifica siesta clase ya existe en unreal engine   esto es ideal saber para la correcta implementacion de la clase
+	IP_BU_INT01_SHIP_MASTER_E* Constructor_Nave;
+
 };

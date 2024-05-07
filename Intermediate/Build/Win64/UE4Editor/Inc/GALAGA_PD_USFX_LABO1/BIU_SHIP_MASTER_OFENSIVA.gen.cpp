@@ -19,9 +19,13 @@ void EmptyLinkFunctionForGeneratedCodeBIU_SHIP_MASTER_OFENSIVA() {}
 	UPackage* Z_Construct_UPackage__Script_GALAGA_PD_USFX_LABO1();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UParticleSystem_NoRegister();
-	ENGINE_API UClass* Z_Construct_UClass_UBoxComponent_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UCapsuleComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
-	GALAGA_PD_USFX_LABO1_API UClass* Z_Construct_UClass_UBUI_INT_NAVE_MAESTRA_NoRegister();
+	GALAGA_PD_USFX_LABO1_API UClass* Z_Construct_UClass_UMoviento_Nave_Maestra_NoRegister();
+	GALAGA_PD_USFX_LABO1_API UClass* Z_Construct_UClass_UMovimiento_Violento_Nave_Maestra_NoRegister();
+	GALAGA_PD_USFX_LABO1_API UClass* Z_Construct_UClass_UMOVIMIENTO_ALEATORIO_NoRegister();
+	GALAGA_PD_USFX_LABO1_API UClass* Z_Construct_UClass_UMOVIMIENTO_NULO_NAVE_m_NoRegister();
+	GALAGA_PD_USFX_LABO1_API UClass* Z_Construct_UClass_UP_BU_INT02_ACC_SHIP_MASTER_E_NoRegister();
 // End Cross Module References
 	void ABIU_SHIP_MASTER_OFENSIVA::StaticRegisterNativesABIU_SHIP_MASTER_OFENSIVA()
 	{
@@ -45,13 +49,33 @@ void EmptyLinkFunctionForGeneratedCodeBIU_SHIP_MASTER_OFENSIVA() {}
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Explosion_Nave;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Colision_Nave_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ShipEnemyCollision_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Colision_Nave;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ShipEnemyCollision;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Sonido_Nave_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Sonido_Nave;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MovimientoComponent_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_MovimientoComponent;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MovimientoViolentoComponent_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_MovimientoViolentoComponent;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MovimientoAleatorioComponent_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_MovimientoAleatorioComponent;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MovimientoNuloComponent_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_MovimientoNuloComponent;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MovimientoAleatorio_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_MovimientoAleatorio;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UE4CodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
@@ -84,7 +108,7 @@ void EmptyLinkFunctionForGeneratedCodeBIU_SHIP_MASTER_OFENSIVA() {}
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_Explosion_Nave = { "Explosion_Nave", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABIU_SHIP_MASTER_OFENSIVA, Explosion_Nave), Z_Construct_UClass_UParticleSystem_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_Explosion_Nave_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_Explosion_Nave_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_Colision_Nave_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_ShipEnemyCollision_MetaData[] = {
 		{ "Category", "Componentes" },
 		{ "Comment", "// ~~ Componente de Colsion : tipo caja ~~\n" },
 		{ "EditInline", "true" },
@@ -92,7 +116,7 @@ void EmptyLinkFunctionForGeneratedCodeBIU_SHIP_MASTER_OFENSIVA() {}
 		{ "ToolTip", "~~ Componente de Colsion : tipo caja ~~" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_Colision_Nave = { "Colision_Nave", nullptr, (EPropertyFlags)0x0010000000080009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABIU_SHIP_MASTER_OFENSIVA, Colision_Nave), Z_Construct_UClass_UBoxComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_Colision_Nave_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_Colision_Nave_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_ShipEnemyCollision = { "ShipEnemyCollision", nullptr, (EPropertyFlags)0x0010000000080009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABIU_SHIP_MASTER_OFENSIVA, ShipEnemyCollision), Z_Construct_UClass_UCapsuleComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_ShipEnemyCollision_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_ShipEnemyCollision_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_Sonido_Nave_MetaData[] = {
 		{ "Category", "Componentes" },
@@ -102,14 +126,67 @@ void EmptyLinkFunctionForGeneratedCodeBIU_SHIP_MASTER_OFENSIVA() {}
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_Sonido_Nave = { "Sonido_Nave", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABIU_SHIP_MASTER_OFENSIVA, Sonido_Nave), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_Sonido_Nave_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_Sonido_Nave_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_MovimientoComponent_MetaData[] = {
+		{ "Category", "Custom Components" },
+		{ "Comment", "// Componente de movimiento personalizado\n" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "BIU_SHIP_MASTER_OFENSIVA.h" },
+		{ "ToolTip", "Componente de movimiento personalizado" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_MovimientoComponent = { "MovimientoComponent", nullptr, (EPropertyFlags)0x00100000000a0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABIU_SHIP_MASTER_OFENSIVA, MovimientoComponent), Z_Construct_UClass_UMoviento_Nave_Maestra_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_MovimientoComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_MovimientoComponent_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_MovimientoViolentoComponent_MetaData[] = {
+		{ "Category", "Custom Components" },
+		{ "Comment", "// Componente de movimiento personalizado\n" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "BIU_SHIP_MASTER_OFENSIVA.h" },
+		{ "ToolTip", "Componente de movimiento personalizado" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_MovimientoViolentoComponent = { "MovimientoViolentoComponent", nullptr, (EPropertyFlags)0x00100000000a0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABIU_SHIP_MASTER_OFENSIVA, MovimientoViolentoComponent), Z_Construct_UClass_UMovimiento_Violento_Nave_Maestra_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_MovimientoViolentoComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_MovimientoViolentoComponent_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_MovimientoAleatorioComponent_MetaData[] = {
+		{ "Category", "Custom Components" },
+		{ "Comment", "// Componente de movimiento personalizado\n" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "BIU_SHIP_MASTER_OFENSIVA.h" },
+		{ "ToolTip", "Componente de movimiento personalizado" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_MovimientoAleatorioComponent = { "MovimientoAleatorioComponent", nullptr, (EPropertyFlags)0x00100000000a0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABIU_SHIP_MASTER_OFENSIVA, MovimientoAleatorioComponent), Z_Construct_UClass_UMOVIMIENTO_ALEATORIO_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_MovimientoAleatorioComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_MovimientoAleatorioComponent_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_MovimientoNuloComponent_MetaData[] = {
+		{ "Category", "Custom Components" },
+		{ "Comment", "// Componente de movimiento personalizado\n" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "BIU_SHIP_MASTER_OFENSIVA.h" },
+		{ "ToolTip", "Componente de movimiento personalizado" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_MovimientoNuloComponent = { "MovimientoNuloComponent", nullptr, (EPropertyFlags)0x00100000000a0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABIU_SHIP_MASTER_OFENSIVA, MovimientoNuloComponent), Z_Construct_UClass_UMOVIMIENTO_NULO_NAVE_m_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_MovimientoNuloComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_MovimientoNuloComponent_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_MovimientoAleatorio_MetaData[] = {
+		{ "Category", "Componentes" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "BIU_SHIP_MASTER_OFENSIVA.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_MovimientoAleatorio = { "MovimientoAleatorio", nullptr, (EPropertyFlags)0x0010000000080009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABIU_SHIP_MASTER_OFENSIVA, MovimientoAleatorio), Z_Construct_UClass_UMOVIMIENTO_ALEATORIO_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_MovimientoAleatorio_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_MovimientoAleatorio_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_Malla_Maestro_A,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_Explosion_Nave,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_Colision_Nave,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_ShipEnemyCollision,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_Sonido_Nave,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_MovimientoComponent,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_MovimientoViolentoComponent,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_MovimientoAleatorioComponent,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_MovimientoNuloComponent,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::NewProp_MovimientoAleatorio,
 	};
 		const UE4CodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::InterfaceParams[] = {
-			{ Z_Construct_UClass_UBUI_INT_NAVE_MAESTRA_NoRegister, (int32)VTABLE_OFFSET(ABIU_SHIP_MASTER_OFENSIVA, IBUI_INT_NAVE_MAESTRA), false },
+			{ Z_Construct_UClass_UP_BU_INT02_ACC_SHIP_MASTER_E_NoRegister, (int32)VTABLE_OFFSET(ABIU_SHIP_MASTER_OFENSIVA, IP_BU_INT02_ACC_SHIP_MASTER_E), false },
 		};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ABIU_SHIP_MASTER_OFENSIVA_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ABIU_SHIP_MASTER_OFENSIVA>::IsAbstract,
@@ -138,7 +215,7 @@ void EmptyLinkFunctionForGeneratedCodeBIU_SHIP_MASTER_OFENSIVA() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABIU_SHIP_MASTER_OFENSIVA, 958553808);
+	IMPLEMENT_CLASS(ABIU_SHIP_MASTER_OFENSIVA, 2419303568);
 	template<> GALAGA_PD_USFX_LABO1_API UClass* StaticClass<ABIU_SHIP_MASTER_OFENSIVA>()
 	{
 		return ABIU_SHIP_MASTER_OFENSIVA::StaticClass();

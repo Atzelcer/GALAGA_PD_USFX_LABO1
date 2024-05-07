@@ -1,0 +1,5 @@
+D:\UNREAL_ENGINGE_4.27\GALAGA_PD_USFX_LABO1\Intermediate\Build\Win64\UE4Editor\Development\GALAGA_PD_USFX_LABO1\Definitions.GALAGA_PD_USFX_LABO1.h
+C:\JUEGOS\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+C:\JUEGOS\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
+D:\UNREAL_ENGINGE_4.27\GALAGA_PD_USFX_LABO1\Source\GALAGA_PD_USFX_LABO1/S_P_INT_02_SISTEMA_DEFENSA.h
+D:\UNREAL_ENGINGE_4.27\GALAGA_PD_USFX_LABO1\Intermediate\Build\Win64\UE4Editor\Inc\GALAGA_PD_USFX_LABO1\S_P_INT_02_SISTEMA_DEFENSA.generated.h

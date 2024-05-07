@@ -6,6 +6,7 @@
 #include "Components/CapsuleComponent.h"
 #include "Particles/ParticleSystem.h"
 #include "Kismet/GameplayStatics.h"
+#include "P_BU_MASTER_SHIP_CONS_02.h"
 #include "GALAGA_PD_USFX_LABO1Pawn.h"
 
 APROYECTIL_MISSIL_P::APROYECTIL_MISSIL_P()
@@ -16,7 +17,7 @@ APROYECTIL_MISSIL_P::APROYECTIL_MISSIL_P()
 		Projectil_Mesh->SetStaticMesh(MeshAsset.Object);
 
 		// Modificar la escala del componente de malla
-		FVector NewScale(3.0f, 5.0f, 5.0f); // Escala modificada
+		FVector NewScale(3.0f, 3.0f, 3.0f); // Escala modificada
 		Projectil_Mesh->SetWorldScale3D(NewScale);
 	}
 
@@ -40,7 +41,7 @@ APROYECTIL_MISSIL_P::APROYECTIL_MISSIL_P()
 	Projectil_Movement->MaxSpeed = 850.0f;
 
 	//Tiempo de vida del proyectil
-	InitialLifeSpan = 6.0f;
+	InitialLifeSpan = 2.5f;
 
 	//Configurando el proyectil para que genere eventos de colision
 	Projectil_Collision->SetCapsuleHalfHeight(160.0f);
@@ -54,9 +55,18 @@ void APROYECTIL_MISSIL_P::NotifyActorBeginOverlap(AActor* OtherActor)
 	AGALAGA_PD_USFX_LABO1Pawn* Nave_Principal = Cast<AGALAGA_PD_USFX_LABO1Pawn>(OtherActor);
 	if (Nave_Principal)
 	{
-		//Nave_Principal->Damage();
-		//DestroyPROYECTIL();
+		Nave_Principal->Damage(50.f);
+		Efectos_De_Colision();
 	}
+
+
+	AP_BU_MASTER_SHIP_CONS_02* Nave_Enemiga = Cast<AP_BU_MASTER_SHIP_CONS_02>(OtherActor);
+	if (Nave_Enemiga)
+	{
+		Nave_Enemiga->Damage(50.f);
+		Efectos_De_Colision();
+	}
+
 }
 
 void APROYECTIL_MISSIL_P::Efectos_De_Colision()

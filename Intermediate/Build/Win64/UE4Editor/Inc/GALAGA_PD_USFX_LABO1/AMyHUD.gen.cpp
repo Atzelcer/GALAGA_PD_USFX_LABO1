@@ -17,6 +17,9 @@ void EmptyLinkFunctionForGeneratedCodeAMyHUD() {}
 	GALAGA_PD_USFX_LABO1_API UClass* Z_Construct_UClass_AAMyHUD();
 	ENGINE_API UClass* Z_Construct_UClass_AHUD();
 	UPackage* Z_Construct_UPackage__Script_GALAGA_PD_USFX_LABO1();
+	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
+	UMG_API UClass* Z_Construct_UClass_UUserWidget_NoRegister();
+	GALAGA_PD_USFX_LABO1_API UClass* Z_Construct_UClass_ULIfes_Naves_NoRegister();
 // End Cross Module References
 	void AAMyHUD::StaticRegisterNativesAAMyHUD()
 	{
@@ -31,6 +34,15 @@ void EmptyLinkFunctionForGeneratedCodeAMyHUD() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_WidgetClass_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FClassPropertyParams NewProp_WidgetClass;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_LifeWidget_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_LifeWidget;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -46,6 +58,28 @@ void EmptyLinkFunctionForGeneratedCodeAMyHUD() {}
 		{ "ShowCategories", "Input|MouseInput Input|TouchInput" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAMyHUD_Statics::NewProp_WidgetClass_MetaData[] = {
+		{ "Category", "UI" },
+		{ "Comment", "// Usa TSubclassOf para especificar el tipo de clase que el Widget puede instanciar\n" },
+		{ "ModuleRelativePath", "AMyHUD.h" },
+		{ "ToolTip", "Usa TSubclassOf para especificar el tipo de clase que el Widget puede instanciar" },
+	};
+#endif
+	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_AAMyHUD_Statics::NewProp_WidgetClass = { "WidgetClass", nullptr, (EPropertyFlags)0x0024080000010001, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AAMyHUD, WidgetClass), Z_Construct_UClass_UUserWidget_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_AAMyHUD_Statics::NewProp_WidgetClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AAMyHUD_Statics::NewProp_WidgetClass_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAMyHUD_Statics::NewProp_LifeWidget_MetaData[] = {
+		{ "Comment", "// Instancia del widget de vida que se mostrar?\n" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "AMyHUD.h" },
+		{ "ToolTip", "Instancia del widget de vida que se mostrar?" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAMyHUD_Statics::NewProp_LifeWidget = { "LifeWidget", nullptr, (EPropertyFlags)0x0020080000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AAMyHUD, LifeWidget), Z_Construct_UClass_ULIfes_Naves_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AAMyHUD_Statics::NewProp_LifeWidget_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AAMyHUD_Statics::NewProp_LifeWidget_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AAMyHUD_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAMyHUD_Statics::NewProp_WidgetClass,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAMyHUD_Statics::NewProp_LifeWidget,
+	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AAMyHUD_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AAMyHUD>::IsAbstract,
 	};
@@ -55,11 +89,11 @@ void EmptyLinkFunctionForGeneratedCodeAMyHUD() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
-		nullptr,
+		Z_Construct_UClass_AAMyHUD_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
-		0,
+		UE_ARRAY_COUNT(Z_Construct_UClass_AAMyHUD_Statics::PropPointers),
 		0,
 		0x009002ACu,
 		METADATA_PARAMS(Z_Construct_UClass_AAMyHUD_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_AAMyHUD_Statics::Class_MetaDataParams))
@@ -73,7 +107,7 @@ void EmptyLinkFunctionForGeneratedCodeAMyHUD() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AAMyHUD, 141581902);
+	IMPLEMENT_CLASS(AAMyHUD, 3542636788);
 	template<> GALAGA_PD_USFX_LABO1_API UClass* StaticClass<AAMyHUD>()
 	{
 		return AAMyHUD::StaticClass();

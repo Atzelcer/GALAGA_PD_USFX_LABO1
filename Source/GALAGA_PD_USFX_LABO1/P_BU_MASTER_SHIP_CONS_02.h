@@ -5,6 +5,11 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
 #include "P_BU_INT02_ACC_SHIP_MASTER_E.h"
+#include "Moviento_Nave_Maestra.h" 
+#include "Movimiento_Violento_Nave_Maestra.h"
+#include "MovementStrategy.h"
+#include "MOVIMIENTO_ALEATORIO.h"
+#include "MOVIMIENTO_NULO_NAVE_m.h"
 #include "P_BU_MASTER_SHIP_CONS_02.generated.h"
 
 UCLASS()
@@ -22,26 +27,53 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Componentes")
 	class UParticleSystem* Explosion_Nave;
 
-	// ~~ Componente de Colsion : tipo caja ~~
 	UPROPERTY(EditAnywhere, Category = "Componentes")
-	class UBoxComponent* Colision_Nave;
+	class UCapsuleComponent* ShipEnemyCollision; // para colisiones
 
 	// ~~ Componente de Sonido ~~
 	UPROPERTY(EditAnywhere, Category = "Componentes")
 	class USoundBase* Sonido_Nave;
 
-	//UPROPERTY(EditAnywhere, Category = "Componentes")
-	//class UMOVIMIENTO_ALEATORIO* MovimientoAleatorio;
+	//La integracion de los componentes de actor es vital para el funcionamiento de la nave
+	//Y tambien para que se el Patron Strategy funcione correctamente
+
+	// Componente de movimiento personalizado
+	UPROPERTY(VisibleAnywhere, Category = "Custom Components")
+	UMoviento_Nave_Maestra* MovimientoComponent;
+
+	// Componente de movimiento personalizado
+	UPROPERTY(VisibleAnywhere, Category = "Custom Components")
+	UMovimiento_Violento_Nave_Maestra* MovimientoViolentoComponent;
+
+	// Componente de movimiento personalizado
+	UPROPERTY(VisibleAnywhere, Category = "Custom Components")
+	UMOVIMIENTO_ALEATORIO* MovimientoAleatorioComponent;
+
+	// Componente de movimiento personalizado
+	UPROPERTY(VisibleAnywhere, Category = "Custom Components")
+	UMOVIMIENTO_NULO_NAVE_m* MovimientoNuloComponent;
+
+	UPROPERTY(EditAnywhere, Category = "Componentes")
+	UMOVIMIENTO_ALEATORIO* MovimientoAleatorio;
+
+	FString Proyectile_Lazer;
+	FString Proyectile_Misil;
+	FString Proyectile_Esfera_Energia;
+	FString Proyectile_Bomba;
+
+	class AScore* Score_Juego;
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+public:
+
+	IMovementStrategy* CurrentMovementStrategy;
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
-	void CheckHealth();
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
@@ -52,14 +84,34 @@ public:
 
 	//float Danio;
 	void Damage(float Danio);
-
-	UPROPERTY()
 	float Vida;
 
-	virtual void SetShieldDistance(float Distance) override;
-	virtual void SetMesh(UStaticMeshComponent* Malla_Maestro) override;
+	float VidaMaxima = 1800;
+
+	FTimerHandle FiringTimerHandle;
+
+	float TiempoAcumuladoDisparo;
+	float  Tiempo_Disparo ;
+	float Danio_Recibido ;
+	float Tiempo_Disparo_Generar ;
+	FVector Distancia_Disparo ;
+	float TiempoDesdeUltimoDisparo;
+
+
+	virtual void Disparar_Proyectil(UClass* ProjectileClass) override;
+
+	virtual void Set_Proyectil_DEnergia(FString _Proyectile_Esfera_Energia) override;
+
+	virtual void Set_Proyectil_DMissil(FString _Proyectile_Misil) override;
+	
+	virtual void Set_Proyectil_DLazer(FString _Proyectile_Lazer) override;
+	
+	virtual void Set_Proyectil_DBomba(FString _Proyectile_Bomba) override;
+
 	virtual void Caracteristicas_Nave_Maestra() override;
 
-	void SetMeshScale(const FVector& Scale);
+
+
+	virtual void SetMovementStrategy(IMovementStrategy* NewStrategy) override;
 
 };

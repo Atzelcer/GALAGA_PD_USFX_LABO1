@@ -6,8 +6,18 @@
 #include "P_FM_CREATE_SQUADRON_02.h"
 #include "P_FM_FABRICA_NAVES.h"
 #include "P_BU_MASTER_SHIP_CONS.h"
-
+#include "P_BU_MASTER_SHIP_CONS_02.h"
 #include "P_BU_DIRECTOR_MASTER_SHIP_E.h"
+
+#include "AS_P_BUI_SISTEMA_DEFENSA_CONST.h"
+#include "S_P_BUI_Director_Sistema_Defensa.h"
+
+#include "S_P_INT_02_SISTEMA_DEFENSA.h"
+#include "S_P_BUI_SISTEMA_DEFENSA_ACT.h"
+#include "AAAS_P_BUI_SISTEMA_DEFENSA_FURIA.h"
+#include "AAS_P_BUI_SISTEMA_DEFENSA_PASIVA.h"
+#include "AS_P_BUI_SISTEMA_DEFENSA_CONST.h"
+#include "Score.h"
 //#include "AMyHUD.h"
 
 AGALAGA_PD_USFX_LABO1GameMode::AGALAGA_PD_USFX_LABO1GameMode()
@@ -22,37 +32,81 @@ AGALAGA_PD_USFX_LABO1GameMode::AGALAGA_PD_USFX_LABO1GameMode()
 	Nivel = 1;
 	TiempoNivel = 0.0f;
 	//HUDClass = AAMyHUD::StaticClass();
+
+
 }
+
+
 
 void AGALAGA_PD_USFX_LABO1GameMode::BeginPlay()
 {
 	Super::BeginPlay();
-	//DiretorNaveMaestra = GetWorld()->SpawnActor<AP_BU_DIRECTOR_MASTER_SHIP_E>(AP_BU_DIRECTOR_MASTER_SHIP_E::StaticClass());
-	//NaveMaestra_Game = GetWorld()->SpawnActor<AP_BU_MASTER_SHIP_CONS>(AP_BU_MASTER_SHIP_CONS::StaticClass());
-	//DiretorNaveMaestra->SetDirectorNaveMaestra(NaveMaestra_Game);
-	//DiretorNaveMaestra->ConstruirNaveMaestra(FVector(1428.0, 0.0, 210.0));
 
-	// Crear el director
-	DiretorNaveMaestra = GetWorld()->SpawnActor<AP_BU_DIRECTOR_MASTER_SHIP_E>(AP_BU_DIRECTOR_MASTER_SHIP_E::StaticClass());
 
-	// Crear el constructor concreto (la nave ofensiva)
-	NaveMaestra_Game = GetWorld()->SpawnActor<ABIU_SHIP_MASTER_OFENSIVA>(ABIU_SHIP_MASTER_OFENSIVA::StaticClass());
 
-	// Configurar el constructor en el director
-	DiretorNaveMaestra->SetDirectorNaveMaestra(NaveMaestra_Game);
+	//Engendramos el director y la nave maestra
+	Nave_Maestra_Game = GetWorld()->SpawnActor<AP_BU_MASTER_SHIP_CONS>(AP_BU_MASTER_SHIP_CONS::StaticClass());
+	DirectorNaveMaestra = GetWorld()->SpawnActor<AP_BU_DIRECTOR_MASTER_SHIP_E>(AP_BU_DIRECTOR_MASTER_SHIP_E::StaticClass());
 
-	DiretorNaveMaestra->ConstruirNaveMaestra(FVector(1428.0, 0.0, 210.0));
+	DirectorNaveMaestra->Set_Constructor_Nave_Maestra(Nave_Maestra_Game);
+	DirectorNaveMaestra->ConstruirNaveMaestra();
 
-	//// Construir la nave en la posición deseada
-	//FVector UbicacionNave = FVector(1428.0, 0.0, 210.0); // Establece la ubicación según sea necesario
-	//DiretorNaveMaestra->ConstruirNaveMaestra(UbicacionNave);
+
+
+
+
+
+	Sistema_DefensaAA01 = GetWorld()->SpawnActor<AS_P_BUI_SISTEMA_DEFENSA_ACT>(AS_P_BUI_SISTEMA_DEFENSA_ACT::StaticClass());
+	Sistema_DefensaAA02 = GetWorld()->SpawnActor<AAAAS_P_BUI_SISTEMA_DEFENSA_FURIA>(AAAAS_P_BUI_SISTEMA_DEFENSA_FURIA::StaticClass());
+	Sistema_DefensaAA03 = GetWorld()->SpawnActor<AAAS_P_BUI_SISTEMA_DEFENSA_PASIVA>(AAAS_P_BUI_SISTEMA_DEFENSA_PASIVA::StaticClass());
+
+	DirectorSistemaDefensa = GetWorld()->SpawnActor<AS_P_BUI_Director_Sistema_Defensa>(AS_P_BUI_Director_Sistema_Defensa::StaticClass());
+
+
+
+
+
+	//DirectorSistemaDefensa->Set_Construir_Sistema_Defensa(Sistema_DefensaAA01);
+	//DirectorSistemaDefensa->Construir_Sistema_Defensa();
+
+	//DirectorSistemaDefensa->Set_Construir_Sistema_Defensa(Sistema_DefensaAA02);
+	//DirectorSistemaDefensa->Construir_Sistema_Defensa();
+
+	//DirectorSistemaDefensa->Set_Construir_Sistema_Defensa(Sistema_DefensaAA03);
+	//DirectorSistemaDefensa->Construir_Sistema_Defensa();
 
 }
+
 
 
 void AGALAGA_PD_USFX_LABO1GameMode::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+
+	CurrentTime += DeltaTime;  // Incrementar el contador de tiempo
+
+	// Comprobar y spawnear el primer sistema de defensa
+	if (!bHasSpawnedSistemaDefensaAA01 && CurrentTime >= TimerSistemaDefensaAA01) {
+		DirectorSistemaDefensa->Set_Construir_Sistema_Defensa(Sistema_DefensaAA01);
+		DirectorSistemaDefensa->Construir_Sistema_Defensa();
+		bHasSpawnedSistemaDefensaAA01 = true;
+	}
+
+	// Comprobar y spawnear el segundo sistema de defensa
+	if (!bHasSpawnedSistemaDefensaAA02 && CurrentTime >= TimerSistemaDefensaAA02) {
+		DirectorSistemaDefensa->Set_Construir_Sistema_Defensa(Sistema_DefensaAA02);
+		DirectorSistemaDefensa->Construir_Sistema_Defensa();
+		bHasSpawnedSistemaDefensaAA02 = true;
+	}
+
+	// Comprobar y spawnear el tercer sistema de defensa
+	if (!bHasSpawnedSistemaDefensaAA03 && CurrentTime >= TimerSistemaDefensaAA03) {
+		DirectorSistemaDefensa->Set_Construir_Sistema_Defensa(Sistema_DefensaAA03);
+		DirectorSistemaDefensa->Construir_Sistema_Defensa();
+		bHasSpawnedSistemaDefensaAA03 = true;
+	}
+
 
 
 	//// Incrementar el tiempo del nivel actual

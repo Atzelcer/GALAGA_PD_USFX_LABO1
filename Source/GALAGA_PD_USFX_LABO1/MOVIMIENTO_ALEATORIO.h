@@ -4,11 +4,12 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "MovementStrategy.h"
 #include "MOVIMIENTO_ALEATORIO.generated.h"
 
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class GALAGA_PD_USFX_LABO1_API UMOVIMIENTO_ALEATORIO : public UActorComponent
+class GALAGA_PD_USFX_LABO1_API UMOVIMIENTO_ALEATORIO : public UActorComponent, public IMovementStrategy
 {
 	GENERATED_BODY()
 
@@ -24,5 +25,10 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-		
+
+	FVector NewPosition;
+	float TimeSinceLastMove = 0.0f;
+	float MoveInterval = 1.0f;
+	
+	virtual void ExecuteMovement(float DeltaTime) override;
 };

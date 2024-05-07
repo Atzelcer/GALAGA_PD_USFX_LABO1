@@ -18,8 +18,9 @@ public:
 	// Sets default values for this pawn's properties
 	AP_BU_MASTER_SHIP_CONS();
 
-	/*UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Mesh")
-	UStaticMeshComponent* Malla_Maestro_A;*/
+
+	UPROPERTY(VisibleAnywhere, Category = "Nave_Maestra")
+	class AP_BU_MASTER_SHIP_CONS_02* Nave_Maestra;
 
 protected:
 	// Called when the game starts or when spawned
@@ -32,40 +33,18 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-
-	float Vida;
-
-	float Tiempo_Disparo;
-	FVector Distancia_Disparo;
-
-	float Tiempo_Disparo_Generar;
-	// Timer handle for controlling firing
-	FTimerHandle FiringTimerHandle;
-
-
 public:
-	//Primera interfaz
-	virtual void Construir_Escudo(AEscudo_Nave_M* Escudo) override;
-	virtual void Construir_Proyectil(APROYECTIL_P* Proyectil) override;
-	virtual void Construir_Fabrica_Naves(AP_FM_FABRICA_NAVES* Fabrica_Nave) override;
 
-	virtual void Ubicacion_Nave_Maestra(FVector Posicion) override;
 
-	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
-	virtual void BuildMesh() override;
-	virtual void FireProjectile(float DeltaTime) override;
+	virtual void Construir_Proyectil_Lazer() override;
 
-	class UStaticMesh* Malla_Nave_Maestra_B = LoadObject<UStaticMesh>(nullptr, TEXT("StaticMesh'/Game/ASSETS/VARIOS_A/Nodriza1.Nodriza1'"));
+	virtual void Construir_Proyectil_Misil() override;
 
-	virtual class AP_BU_MASTER_SHIP_CONS_02* Get_Master_Maestra() override;
+	virtual void Construir_Proyectil_Esfera_Energia() override;
 
-	AP_BU_MASTER_SHIP_CONS_02* NaveMaestra;
+	virtual void Construir_Proyectil_Bomba() override;
 
-	class UStaticMesh* Malla_Maestro = LoadObject<UStaticMesh>(nullptr, TEXT("StaticMesh'/Game/ASSETS/VARIOS_A/Nodriza1.Nodriza1'"));
-private:
-	AEscudo_Nave_M* Escudo;
-	APROYECTIL_P* Proyectil;
-	AP_FM_FABRICA_NAVES* Fabrica_Nave;
+	AP_BU_MASTER_SHIP_CONS_02* Get_Master_Maestra() override;
 
 
 };

@@ -19,8 +19,12 @@ void EmptyLinkFunctionForGeneratedCodeP_BU_MASTER_SHIP_CONS_02() {}
 	UPackage* Z_Construct_UPackage__Script_GALAGA_PD_USFX_LABO1();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UParticleSystem_NoRegister();
-	ENGINE_API UClass* Z_Construct_UClass_UBoxComponent_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UCapsuleComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
+	GALAGA_PD_USFX_LABO1_API UClass* Z_Construct_UClass_UMoviento_Nave_Maestra_NoRegister();
+	GALAGA_PD_USFX_LABO1_API UClass* Z_Construct_UClass_UMovimiento_Violento_Nave_Maestra_NoRegister();
+	GALAGA_PD_USFX_LABO1_API UClass* Z_Construct_UClass_UMOVIMIENTO_ALEATORIO_NoRegister();
+	GALAGA_PD_USFX_LABO1_API UClass* Z_Construct_UClass_UMOVIMIENTO_NULO_NAVE_m_NoRegister();
 	GALAGA_PD_USFX_LABO1_API UClass* Z_Construct_UClass_UP_BU_INT02_ACC_SHIP_MASTER_E_NoRegister();
 // End Cross Module References
 	void AP_BU_MASTER_SHIP_CONS_02::StaticRegisterNativesAP_BU_MASTER_SHIP_CONS_02()
@@ -45,17 +49,33 @@ void EmptyLinkFunctionForGeneratedCodeP_BU_MASTER_SHIP_CONS_02() {}
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Explosion_Nave;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Colision_Nave_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ShipEnemyCollision_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Colision_Nave;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ShipEnemyCollision;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Sonido_Nave_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Sonido_Nave;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Vida_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MovimientoComponent_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Vida;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_MovimientoComponent;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MovimientoViolentoComponent_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_MovimientoViolentoComponent;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MovimientoAleatorioComponent_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_MovimientoAleatorioComponent;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MovimientoNuloComponent_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_MovimientoNuloComponent;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MovimientoAleatorio_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_MovimientoAleatorio;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UE4CodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
@@ -88,15 +108,13 @@ void EmptyLinkFunctionForGeneratedCodeP_BU_MASTER_SHIP_CONS_02() {}
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_Explosion_Nave = { "Explosion_Nave", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AP_BU_MASTER_SHIP_CONS_02, Explosion_Nave), Z_Construct_UClass_UParticleSystem_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_Explosion_Nave_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_Explosion_Nave_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_Colision_Nave_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_ShipEnemyCollision_MetaData[] = {
 		{ "Category", "Componentes" },
-		{ "Comment", "// ~~ Componente de Colsion : tipo caja ~~\n" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "P_BU_MASTER_SHIP_CONS_02.h" },
-		{ "ToolTip", "~~ Componente de Colsion : tipo caja ~~" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_Colision_Nave = { "Colision_Nave", nullptr, (EPropertyFlags)0x0010000000080009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AP_BU_MASTER_SHIP_CONS_02, Colision_Nave), Z_Construct_UClass_UBoxComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_Colision_Nave_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_Colision_Nave_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_ShipEnemyCollision = { "ShipEnemyCollision", nullptr, (EPropertyFlags)0x0010000000080009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AP_BU_MASTER_SHIP_CONS_02, ShipEnemyCollision), Z_Construct_UClass_UCapsuleComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_ShipEnemyCollision_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_ShipEnemyCollision_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_Sonido_Nave_MetaData[] = {
 		{ "Category", "Componentes" },
@@ -107,17 +125,63 @@ void EmptyLinkFunctionForGeneratedCodeP_BU_MASTER_SHIP_CONS_02() {}
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_Sonido_Nave = { "Sonido_Nave", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AP_BU_MASTER_SHIP_CONS_02, Sonido_Nave), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_Sonido_Nave_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_Sonido_Nave_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_Vida_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_MovimientoComponent_MetaData[] = {
+		{ "Category", "Custom Components" },
+		{ "Comment", "// Componente de movimiento personalizado\n" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "P_BU_MASTER_SHIP_CONS_02.h" },
+		{ "ToolTip", "Componente de movimiento personalizado" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_MovimientoComponent = { "MovimientoComponent", nullptr, (EPropertyFlags)0x00100000000a0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AP_BU_MASTER_SHIP_CONS_02, MovimientoComponent), Z_Construct_UClass_UMoviento_Nave_Maestra_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_MovimientoComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_MovimientoComponent_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_MovimientoViolentoComponent_MetaData[] = {
+		{ "Category", "Custom Components" },
+		{ "Comment", "// Componente de movimiento personalizado\n" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "P_BU_MASTER_SHIP_CONS_02.h" },
+		{ "ToolTip", "Componente de movimiento personalizado" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_MovimientoViolentoComponent = { "MovimientoViolentoComponent", nullptr, (EPropertyFlags)0x00100000000a0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AP_BU_MASTER_SHIP_CONS_02, MovimientoViolentoComponent), Z_Construct_UClass_UMovimiento_Violento_Nave_Maestra_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_MovimientoViolentoComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_MovimientoViolentoComponent_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_MovimientoAleatorioComponent_MetaData[] = {
+		{ "Category", "Custom Components" },
+		{ "Comment", "// Componente de movimiento personalizado\n" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "P_BU_MASTER_SHIP_CONS_02.h" },
+		{ "ToolTip", "Componente de movimiento personalizado" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_MovimientoAleatorioComponent = { "MovimientoAleatorioComponent", nullptr, (EPropertyFlags)0x00100000000a0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AP_BU_MASTER_SHIP_CONS_02, MovimientoAleatorioComponent), Z_Construct_UClass_UMOVIMIENTO_ALEATORIO_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_MovimientoAleatorioComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_MovimientoAleatorioComponent_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_MovimientoNuloComponent_MetaData[] = {
+		{ "Category", "Custom Components" },
+		{ "Comment", "// Componente de movimiento personalizado\n" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "P_BU_MASTER_SHIP_CONS_02.h" },
+		{ "ToolTip", "Componente de movimiento personalizado" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_MovimientoNuloComponent = { "MovimientoNuloComponent", nullptr, (EPropertyFlags)0x00100000000a0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AP_BU_MASTER_SHIP_CONS_02, MovimientoNuloComponent), Z_Construct_UClass_UMOVIMIENTO_NULO_NAVE_m_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_MovimientoNuloComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_MovimientoNuloComponent_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_MovimientoAleatorio_MetaData[] = {
+		{ "Category", "Componentes" },
+		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "P_BU_MASTER_SHIP_CONS_02.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_Vida = { "Vida", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AP_BU_MASTER_SHIP_CONS_02, Vida), METADATA_PARAMS(Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_Vida_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_Vida_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_MovimientoAleatorio = { "MovimientoAleatorio", nullptr, (EPropertyFlags)0x0010000000080009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AP_BU_MASTER_SHIP_CONS_02, MovimientoAleatorio), Z_Construct_UClass_UMOVIMIENTO_ALEATORIO_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_MovimientoAleatorio_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_MovimientoAleatorio_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_Malla_Maestro_A,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_Explosion_Nave,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_Colision_Nave,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_ShipEnemyCollision,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_Sonido_Nave,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_Vida,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_MovimientoComponent,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_MovimientoViolentoComponent,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_MovimientoAleatorioComponent,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_MovimientoNuloComponent,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::NewProp_MovimientoAleatorio,
 	};
 		const UE4CodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_Statics::InterfaceParams[] = {
 			{ Z_Construct_UClass_UP_BU_INT02_ACC_SHIP_MASTER_E_NoRegister, (int32)VTABLE_OFFSET(AP_BU_MASTER_SHIP_CONS_02, IP_BU_INT02_ACC_SHIP_MASTER_E), false },
@@ -149,7 +213,7 @@ void EmptyLinkFunctionForGeneratedCodeP_BU_MASTER_SHIP_CONS_02() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AP_BU_MASTER_SHIP_CONS_02, 3100218018);
+	IMPLEMENT_CLASS(AP_BU_MASTER_SHIP_CONS_02, 575482700);
 	template<> GALAGA_PD_USFX_LABO1_API UClass* StaticClass<AP_BU_MASTER_SHIP_CONS_02>()
 	{
 		return AP_BU_MASTER_SHIP_CONS_02::StaticClass();

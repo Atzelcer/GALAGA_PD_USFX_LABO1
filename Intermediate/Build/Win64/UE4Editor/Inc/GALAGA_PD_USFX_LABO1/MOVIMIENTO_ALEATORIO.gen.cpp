@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeMOVIMIENTO_ALEATORIO() {}
 	GALAGA_PD_USFX_LABO1_API UClass* Z_Construct_UClass_UMOVIMIENTO_ALEATORIO();
 	ENGINE_API UClass* Z_Construct_UClass_UActorComponent();
 	UPackage* Z_Construct_UPackage__Script_GALAGA_PD_USFX_LABO1();
+	GALAGA_PD_USFX_LABO1_API UClass* Z_Construct_UClass_UMovementStrategy_NoRegister();
 // End Cross Module References
 	void UMOVIMIENTO_ALEATORIO::StaticRegisterNativesUMOVIMIENTO_ALEATORIO()
 	{
@@ -31,6 +32,7 @@ void EmptyLinkFunctionForGeneratedCodeMOVIMIENTO_ALEATORIO() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+		static const UE4CodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -46,6 +48,9 @@ void EmptyLinkFunctionForGeneratedCodeMOVIMIENTO_ALEATORIO() {}
 		{ "ModuleRelativePath", "MOVIMIENTO_ALEATORIO.h" },
 	};
 #endif
+		const UE4CodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_UMOVIMIENTO_ALEATORIO_Statics::InterfaceParams[] = {
+			{ Z_Construct_UClass_UMovementStrategy_NoRegister, (int32)VTABLE_OFFSET(UMOVIMIENTO_ALEATORIO, IMovementStrategy), false },
+		};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UMOVIMIENTO_ALEATORIO_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UMOVIMIENTO_ALEATORIO>::IsAbstract,
 	};
@@ -56,11 +61,11 @@ void EmptyLinkFunctionForGeneratedCodeMOVIMIENTO_ALEATORIO() {}
 		DependentSingletons,
 		nullptr,
 		nullptr,
-		nullptr,
+		InterfaceParams,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
 		0,
-		0,
+		UE_ARRAY_COUNT(InterfaceParams),
 		0x00B000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_UMOVIMIENTO_ALEATORIO_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_UMOVIMIENTO_ALEATORIO_Statics::Class_MetaDataParams))
 	};
@@ -73,7 +78,7 @@ void EmptyLinkFunctionForGeneratedCodeMOVIMIENTO_ALEATORIO() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UMOVIMIENTO_ALEATORIO, 1057191466);
+	IMPLEMENT_CLASS(UMOVIMIENTO_ALEATORIO, 2006342236);
 	template<> GALAGA_PD_USFX_LABO1_API UClass* StaticClass<UMOVIMIENTO_ALEATORIO>()
 	{
 		return UMOVIMIENTO_ALEATORIO::StaticClass();

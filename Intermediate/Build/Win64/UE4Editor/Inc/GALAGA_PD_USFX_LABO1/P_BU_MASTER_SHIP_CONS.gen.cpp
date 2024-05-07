@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeP_BU_MASTER_SHIP_CONS() {}
 	GALAGA_PD_USFX_LABO1_API UClass* Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS();
 	ENGINE_API UClass* Z_Construct_UClass_APawn();
 	UPackage* Z_Construct_UPackage__Script_GALAGA_PD_USFX_LABO1();
+	GALAGA_PD_USFX_LABO1_API UClass* Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_NoRegister();
 	GALAGA_PD_USFX_LABO1_API UClass* Z_Construct_UClass_UP_BU_INT01_SHIP_MASTER_E_NoRegister();
 // End Cross Module References
 	void AP_BU_MASTER_SHIP_CONS::StaticRegisterNativesAP_BU_MASTER_SHIP_CONS()
@@ -32,6 +33,11 @@ void EmptyLinkFunctionForGeneratedCodeP_BU_MASTER_SHIP_CONS() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Nave_Maestra_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Nave_Maestra;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UE4CodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -47,6 +53,16 @@ void EmptyLinkFunctionForGeneratedCodeP_BU_MASTER_SHIP_CONS() {}
 		{ "ModuleRelativePath", "P_BU_MASTER_SHIP_CONS.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_Statics::NewProp_Nave_Maestra_MetaData[] = {
+		{ "Category", "Nave_Maestra" },
+		{ "ModuleRelativePath", "P_BU_MASTER_SHIP_CONS.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_Statics::NewProp_Nave_Maestra = { "Nave_Maestra", nullptr, (EPropertyFlags)0x0010000000020001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AP_BU_MASTER_SHIP_CONS, Nave_Maestra), Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_02_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_Statics::NewProp_Nave_Maestra_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_Statics::NewProp_Nave_Maestra_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_Statics::NewProp_Nave_Maestra,
+	};
 		const UE4CodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_Statics::InterfaceParams[] = {
 			{ Z_Construct_UClass_UP_BU_INT01_SHIP_MASTER_E_NoRegister, (int32)VTABLE_OFFSET(AP_BU_MASTER_SHIP_CONS, IP_BU_INT01_SHIP_MASTER_E), false },
 		};
@@ -59,11 +75,11 @@ void EmptyLinkFunctionForGeneratedCodeP_BU_MASTER_SHIP_CONS() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
-		nullptr,
+		Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_Statics::PropPointers,
 		InterfaceParams,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
-		0,
+		UE_ARRAY_COUNT(Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_Statics::PropPointers),
 		UE_ARRAY_COUNT(InterfaceParams),
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_AP_BU_MASTER_SHIP_CONS_Statics::Class_MetaDataParams))
@@ -77,7 +93,7 @@ void EmptyLinkFunctionForGeneratedCodeP_BU_MASTER_SHIP_CONS() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AP_BU_MASTER_SHIP_CONS, 1255029665);
+	IMPLEMENT_CLASS(AP_BU_MASTER_SHIP_CONS, 2157968887);
 	template<> GALAGA_PD_USFX_LABO1_API UClass* StaticClass<AP_BU_MASTER_SHIP_CONS>()
 	{
 		return AP_BU_MASTER_SHIP_CONS::StaticClass();

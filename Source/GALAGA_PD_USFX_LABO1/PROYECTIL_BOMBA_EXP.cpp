@@ -33,8 +33,6 @@ APROYECTIL_BOMBA_EXP::APROYECTIL_BOMBA_EXP()
 	{
 		Projectil_Sound = SoundAsset.Object;
 	}
-
-
 	//Determinando la velocidad del proyectil
 	Projectil_Movement->InitialSpeed = 750.0f;
 	Projectil_Movement->MaxSpeed = 850.0f;
@@ -57,6 +55,7 @@ void APROYECTIL_BOMBA_EXP::NotifyActorBeginOverlap(AActor* OtherActor)
 		//Nave_Principal->Damage();
 		//DestroyPROYECTIL();
 	}
+
 }
 
 void APROYECTIL_BOMBA_EXP::Efectos_De_Colision()
