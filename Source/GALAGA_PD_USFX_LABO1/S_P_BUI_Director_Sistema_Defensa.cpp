@@ -61,10 +61,9 @@ void AS_P_BUI_Director_Sistema_Defensa::Construir_Sistema_Defensa()
 	Construir_DefensaAA->Set_Lanza_Cohetes();
 	
 	Construir_DefensaAA->Set_Minas_Galacticas();
-
-
-
 }
+
+
 
 AAS_P_BUI_SISTEMA_DEFENSA_CONST* AS_P_BUI_Director_Sistema_Defensa::Obtener_Sistema_DefensaAA()
 {

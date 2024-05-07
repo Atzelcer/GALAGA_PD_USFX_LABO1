@@ -49,12 +49,6 @@ void AAS_P_BUI_SISTEMA_DEFENSA_CONST::Tick(float DeltaTime)
 		Construir_Minas_Galacticas(0.f); // Llamar a la función que genera la bomba
 	}
 
-	//Tiempo_Transcurrido += DeltaTime;
-
-	//if (Tiempo_Transcurrido >= 5.f ) {
-	//	Construir_Sistema_Defensa();
-	//	Tiempo_Transcurrido = 0.0f;
-	//}
 
 }
 
@@ -62,9 +56,11 @@ void AAS_P_BUI_SISTEMA_DEFENSA_CONST::Tick(float DeltaTime)
 // Called to bind functionality to input
 void AAS_P_BUI_SISTEMA_DEFENSA_CONST::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
-	Super::SetupPlayerInputComponent(PlayerInputComponent);
+	//Super::SetupPlayerInputComponent(PlayerInputComponent);
 
 }
+
+
 
 void AAS_P_BUI_SISTEMA_DEFENSA_CONST::Construir_Torretas(int Cantida_Torretas)
 {
@@ -72,14 +68,13 @@ void AAS_P_BUI_SISTEMA_DEFENSA_CONST::Construir_Torretas(int Cantida_Torretas)
 
 	UWorld* const World = GetWorld();
 	float positionY = 1700.0f;
-
-	if (World != nullptr) {
+    if (World != nullptr) {
 		for (int i = 0; i < Cantidad_Torretas01; i++) {
 			FVector Location(-1750.0f, positionY, 210.0f);
-			ATorreta_Espacial* Torreta = World->SpawnActor<ATorreta_Espacial_02>(Location, FRotator(0.0f, 0.0f, 210.0f));
+			Torretas = World->SpawnActor<ATorreta_Espacial_02>(Location, FRotator(0.0f, 0.0f, 210.0f));
 			positionY -= 400.0f; // Mueve la posición hacia abajo para la siguiente torreta
-		}
-	}
+    }
+}
 }
 
 void AAS_P_BUI_SISTEMA_DEFENSA_CONST::Construir_Canones(int Cantidad_Canones)
@@ -92,7 +87,7 @@ void AAS_P_BUI_SISTEMA_DEFENSA_CONST::Construir_Canones(int Cantidad_Canones)
 	if (World != nullptr) {
 		for (int i = 0; i < Cantidad_Canones01; i++) {
 			FVector Location(1850.0f, positionY, 210.0f);
-			ACANONES_ESPACIALES* Canones = World->SpawnActor<ACANONES_ESPACIALES_02>(Location, FRotator(0.0f, 180.0f, 0.f));
+			Canones = World->SpawnActor<ACANONES_ESPACIALES_02>(Location, FRotator(0.0f, 180.0f, 0.f));
 			positionY += 400.0f; // Mueve la posición hacia arriba para el siguiente cañón
 		}
 	}
@@ -111,7 +106,7 @@ void AAS_P_BUI_SISTEMA_DEFENSA_CONST::Construir_Lanza_Cohetes(int Cantidad_Lanza
 	if (World != nullptr) {
 		for (int i = 0; i < Cantidad_Lanza_Cohetes01; i++) {
 			FVector Location(positionX, -1790.0f, 210.0f);
-			ALANZA_COHETES_ESPACIAL* LanzaCohetes = World->SpawnActor<AMyLANZA_COHETES_ESPACIAL_02>(Location, FRotator(0.0f, 90.0f, 0.0f));
+			Lanza_Cohetes = World->SpawnActor<AMyLANZA_COHETES_ESPACIAL_02>(Location, FRotator(0.0f, 90.0f, 0.0f));
 			positionX += 400.0f; // Mueve la posición hacia la derecha para el siguiente lanzacohetes
 		}
 	}
@@ -130,24 +125,9 @@ void AAS_P_BUI_SISTEMA_DEFENSA_CONST::Construir_Minas_Galacticas(int Cantidad_Mi
 			float RandomSpawnX = FMath::RandRange(-1700, 1700); // Rango aleatorio en el eje X
 			float RandomSpawnY = FMath::RandRange(-1700, 1700); // Rango aleatorio en el eje Y
 			FVector Location(RandomSpawnX, RandomSpawnY, 210.0f);
-			AMINAS_ESPACIALES* MinasGalacticas = World->SpawnActor<AMyMINAS_ESPACIALES_03>(Location, FRotator(0.0f, 0.0f, 0.0f));
+			Minas_Galacticas = World->SpawnActor<AMyMINAS_ESPACIALES_03>(Location, FRotator(0.0f, 0.0f, 0.0f));
 		}
 	}
 }
 
 
-
-//void AAS_P_BUI_SISTEMA_DEFENSA_CONST::Construir_Sistema_Defensa()
-//{
-//	
-//	//if (Contador >= 1)
-//	//{
-//	//	return;
-//	//}
-//
-//	//
-//
-//	//Contador++;
-//
-//}
-//

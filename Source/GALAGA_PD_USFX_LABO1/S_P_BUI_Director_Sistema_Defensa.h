@@ -18,7 +18,6 @@ public:
 	// Sets default values for this pawn's properties
 	AS_P_BUI_Director_Sistema_Defensa();
 
-
 public:
 
 	IS_P_INT_SISTEMA_DEFENSA* Construir_DefensaAA;
